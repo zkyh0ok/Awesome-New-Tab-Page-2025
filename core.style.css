@@ -37,4 +37,76 @@ body {
 
 .widget:hover {
     transform: translateY(-5px); /* Efecto hover: eleva ligeramente el widget */
- 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Títulos y textos en los widgets */
+.widget h2 {
+    font-size: 1.5rem;
+    color: #222; /* Color de los títulos de los widgets */
+    margin-bottom: 10px;
+}
+
+.widget p {
+    font-size: 1rem;
+    color: #555; /* Color de texto secundario */
+}
+
+/* Estilo para botones dentro de los widgets */
+.widget button {
+    background-color: #0078D4; /* Azul de Microsoft */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.widget button:hover {
+    background-color: #005a8d; /* Azul más oscuro al hacer hover */
+}
+
+/* Estilos para un encabezado */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-top: 50px;
+}
+
+/* Estilos de transición para los widgets al cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.widget {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    #widgets-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para pantallas más pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Ajuste de tamaño de fuente para móviles */
+    }
+
+    .widget {
+        padding: 15px; /* Menos espacio en dispositivos más pequeños */
+    }
+
+    .widget button {
+        font-size: 0.9rem; /* Botones más pequeños en dispositivos móviles */
+    }
+}
